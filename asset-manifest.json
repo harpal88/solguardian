@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/solguardian/static/css/main.e6c13ad2.css",
+    "main.js": "/solguardian/static/js/main.0ee6c814.js",
+    "static/js/453.8f31123a.chunk.js": "/solguardian/static/js/453.8f31123a.chunk.js",
+    "index.html": "/solguardian/index.html",
+    "main.e6c13ad2.css.map": "/solguardian/static/css/main.e6c13ad2.css.map",
+    "main.0ee6c814.js.map": "/solguardian/static/js/main.0ee6c814.js.map",
+    "453.8f31123a.chunk.js.map": "/solguardian/static/js/453.8f31123a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.0ee6c814.js"
+  ]
+}
