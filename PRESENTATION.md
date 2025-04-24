@@ -1,8 +1,10 @@
-# SolGuardian - Solscan Monitoring Masters Hackathon Submission
+# SolGuardian - Making Solana's Data Layer Accessible
 
 ## Project Summary
 
-SolGuardian is a real-time monitoring dashboard for tracking whale activity on the Solana blockchain. It provides comprehensive tools for analyzing wallet behavior, visualizing transaction flows, and detecting significant movements across the network.
+SolGuardian directly challenges the misconception that "Solana's data layer is too complex" by providing an intuitive, real-time monitoring dashboard that transforms raw blockchain data into actionable insights. By leveraging Solscan's comprehensive APIs, we've created a powerful tool that makes whale activity tracking, wallet profiling, and transaction flow visualization accessible to everyone - from casual users to professional analysts.
+
+Our project demonstrates that with the right approach and tools, Solana's on-chain data can be not only accessible but also incredibly valuable for understanding market dynamics, identifying significant movements, and enhancing transparency across the ecosystem.
 
 ## Problem Statement & Hackathon Focus
 
@@ -112,3 +114,4 @@ SolGuardian directly supports the hackathon's goal of demonstrating that "Solana
 - Special thanks to the Solscan team for their excellent API documentation and support
 - Solana Foundation for building an incredible blockchain ecosystem
 - The Solana developer community for their valuable resources and inspiration
+

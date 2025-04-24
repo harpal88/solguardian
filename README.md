@@ -223,3 +223,4 @@ Builds the app for production to the `build` folder.
 - Special thanks to the Solscan team for their excellent API documentation and support
 - Solana Foundation for building an incredible blockchain ecosystem
 - The Solana developer community for their valuable resources and inspiration
+
