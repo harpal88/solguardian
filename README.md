@@ -76,9 +76,13 @@ SolGuardian utilizes several key Solscan API endpoints:
    npm install
    ```
 
-3. Create a `.env` file in the root directory and add your Solscan API key:
+3. Create a `.env` file in the root directory based on the `.env.example` template:
    ```
-   REACT_APP_SOLSCAN_API_KEY=your_api_key_here
+   # Copy the example file
+   cp .env.example .env
+
+   # Edit the .env file and add your Solscan API key
+   # Get your API key from https://public-api.solscan.io/
    ```
 
 4. Start the development server:
