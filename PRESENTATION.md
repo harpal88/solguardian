@@ -71,8 +71,8 @@ SolGuardian enhances transparency and security in the Solana ecosystem by:
 
 ## Team
 
-- Developer: Harpal Singh
-- Contact: harpalsingh7984@gmail.com
+- Developer: Harpal Sinh
+- Contact: harpalsinh7984@gmail.com
 
 ## Acknowledgments
 
