@@ -4,8 +4,9 @@
  */
 import axios from 'axios';
 
-// API token - in a production app, this would be stored in environment variables
-const API_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkQXQiOjE3NDUwNjUxNjg4NjAsImVtYWlsIjoiaGFycGFsc2luaDc5ODRAZ21haWwuY29tIiwiYWN0aW9uIjoidG9rZW4tYXBpIiwiYXBpVmVyc2lvbiI6InYyIiwiaWF0IjoxNzQ1MDY1MTY4fQ.e-2IFl1ziEjHO4-g6f4PYEdc36aaccDnAPWi_bgOzNc";
+// API token from environment variables
+// Note: For GitHub Pages deployment, this will be embedded in the build
+const API_TOKEN = process.env.REACT_APP_SOLSCAN_API_KEY || "";
 
 // Cache for API responses
 const apiCache = {

@@ -52,7 +52,7 @@ export const formatDate = (timestamp) => {
       return 'Invalid date';
     }
 
-    // Format: Jan 1, 2023 14:30:45
+    // Format: Jan 1, 2025 14:30:45
     return date.toLocaleString(undefined, {
       year: 'numeric',
       month: 'short',
