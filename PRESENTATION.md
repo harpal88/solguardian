@@ -4,12 +4,14 @@
 
 SolGuardian is a real-time monitoring dashboard for tracking whale activity on the Solana blockchain. It provides comprehensive tools for analyzing wallet behavior, visualizing transaction flows, and detecting significant movements across the network.
 
-## Problem Statement
+## Problem Statement & Hackathon Focus
 
 Monitoring large transactions and whale activity on Solana is challenging due to:
 - High transaction volume making it difficult to identify significant movements
 - Lack of accessible tools for real-time monitoring of whale activity
 - Difficulty in understanding transaction patterns and wallet behaviors
+
+SolGuardian directly addresses the "Whale Activity & Token Flow Monitoring" focus area of the Solscan Monitoring Masters hackathon, demonstrating that Solana's data layer is accessible and valuable when leveraged with the right tools.
 
 ## Our Solution
 
@@ -45,6 +47,15 @@ All these features are demonstrated in the video walkthrough.
 
 ## Technical Implementation
 
+### Architecture
+SolGuardian is built as a React-based web application with a focus on real-time data processing and visualization:
+
+- **Frontend**: React.js with functional components and hooks
+- **State Management**: React Context API for global state
+- **Data Visualization**: Chart.js for trend analysis
+- **Styling**: Custom CSS with responsive design
+
+### Solscan API Integration
 SolGuardian leverages Solscan's comprehensive APIs to fetch and analyze on-chain data:
 
 - `/account/transfer` - For wallet transaction history
@@ -52,16 +63,37 @@ SolGuardian leverages Solscan's comprehensive APIs to fetch and analyze on-chain
 - `/transaction/last` - For real-time transaction monitoring
 - `/token/defi/activities` - For DEX activity monitoring
 
+### Data Flow & Optimization
+1. **Data Collection**: Fetch transaction data from Solscan APIs
+2. **Processing**: Normalize and deduplicate transaction data
+3. **Analysis**: Apply filtering, categorization, and pattern detection
+4. **Visualization**: Present insights through intuitive UI components
+
 Our application implements intelligent caching and pagination to minimize API calls while maintaining data freshness, and uses a configurable polling system for real-time updates without overwhelming the API.
+
+### Challenges Overcome
+- **API Rate Limiting**: Implemented smart caching and request deduplication
+- **Large Dataset Handling**: Developed optimized data processing utilities
+- **Real-time Updates**: Created a polling system with automatic pause/resume
 
 ## Impact & Relevance
 
+### Ecosystem Benefits
 SolGuardian enhances transparency and security in the Solana ecosystem by:
 
 1. Making whale activity visible and trackable
 2. Providing insights into transaction patterns and wallet behaviors
 3. Enabling users to monitor significant movements that could impact the market
 4. Demonstrating the accessibility of Solana's on-chain data through Solscan's APIs
+
+### User Benefits
+- **Traders**: Gain insights into market-moving transactions before they impact prices
+- **Researchers**: Analyze wallet behavior patterns and transaction flows
+- **Security Analysts**: Identify suspicious activity and unusual patterns
+- **Newcomers**: Understand Solana's data layer through intuitive visualizations
+
+### Hackathon Alignment
+SolGuardian directly supports the hackathon's goal of demonstrating that "Solana's data layer is too complex" is a misconception. By transforming raw on-chain data into actionable insights through an intuitive interface, we show that Solana's data can be accessible and valuable to all users.
 
 ## Demo & Links
 
@@ -71,11 +103,12 @@ SolGuardian enhances transparency and security in the Solana ecosystem by:
 
 ## Team
 
-- Developer: Harpal Sinh
-- Contact: harpalsinh7984@gmail.com
+- Developer: Harpal Singh
+- Contact: harpalsingh7984@gmail.com
 
 ## Acknowledgments
 
-- Solscan for providing the comprehensive APIs that power this application
+- Solscan for providing the comprehensive APIs that power this application and organizing the Monitoring Masters hackathon
+- Special thanks to the Solscan team for their excellent API documentation and support
 - Solana Foundation for building an incredible blockchain ecosystem
-- Solscan Monitoring Masters hackathon for the opportunity to showcase this project
+- The Solana developer community for their valuable resources and inspiration

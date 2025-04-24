@@ -4,6 +4,12 @@
 
 SolGuardian is a comprehensive monitoring dashboard for tracking whale activity, wallet profiles, and transaction flows on the Solana blockchain. Built for the Solscan Monitoring Masters hackathon, this tool demonstrates how Solana's on-chain data can be accessed and utilized to enhance transparency and detect significant activity across the ecosystem.
 
+### Problem Statement
+
+There's a common misconception that "Solana's data layer is too complex" for effective monitoring. In reality, with the right tools and approach, Solana's on-chain data can provide valuable insights for traders, researchers, and security analysts. The challenge is making this data accessible, actionable, and presented in a user-friendly way.
+
+SolGuardian addresses this challenge by providing real-time monitoring of whale activity, visualizing transaction flows, and profiling wallet behavior patterns - all through an intuitive interface that makes Solana's data layer approachable and useful.
+
 ### Key Features
 
 - **Whale Watchlist**: Monitor known whale wallets and track their transaction activity
@@ -11,6 +17,17 @@ SolGuardian is a comprehensive monitoring dashboard for tracking whale activity,
 - **Transaction Flow Analysis**: Visualize token movement between wallets, exchanges, and DEXs
 - **Live Whale Tracker**: Real-time monitoring of large transactions across the Solana network
 - **Historical Trend Analysis**: Chart-based visualization of transaction patterns over time
+
+## Hackathon Focus Area
+
+SolGuardian directly addresses the "Whale Activity & Token Flow Monitoring" focus area of the Solscan Monitoring Masters hackathon by:
+
+- Monitoring large wallet movements using Solscan's APIs
+- Visualizing token flows to and from major addresses, exchanges, and DEXs
+- Providing real-time alerts for high-volume transfers from known whale wallets
+- Offering insights into transaction patterns and wallet behaviors
+
+The application demonstrates how Solscan's APIs can be leveraged to create powerful monitoring tools that make Solana's data layer accessible and actionable.
 
 ## Technical Architecture
 
@@ -136,6 +153,30 @@ The Live Whale Tracker tab provides real-time monitoring of large transactions:
 ### Challenge: Real-time Updates Without WebSockets
 
 **Solution**: Created a configurable polling system with automatic pause/resume functionality to detect significant activity without overwhelming the API.
+
+## Impact & Relevance
+
+SolGuardian provides significant benefits to the Solana ecosystem:
+
+### Enhanced Transparency
+- Makes whale activity visible and trackable for all users
+- Demystifies large token movements that can impact market conditions
+- Provides context for transaction patterns through wallet profiling
+
+### Improved Security
+- Helps identify suspicious transaction patterns
+- Enables monitoring of known addresses for unusual activity
+- Provides real-time visibility into large fund movements
+
+### Better User Experience
+- Transforms complex blockchain data into intuitive visualizations
+- Simplifies the process of tracking multiple whale wallets
+- Makes Solana's data layer accessible to users without technical blockchain knowledge
+
+### Ecosystem Value
+- Demonstrates the power and accessibility of Solscan's APIs
+- Contributes to the narrative that Solana's data is approachable and valuable
+- Provides a foundation for more advanced monitoring tools in the ecosystem
 
 ## Future Enhancements
 
