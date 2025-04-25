@@ -301,7 +301,7 @@ function App() {
             )}
 
             <div className="tab-content">
-              {activeTab === 'live' && <LiveWhaleTracker />}
+              {activeTab === 'live' && <LiveWhaleTracker currentWalletAddress={walletAddress} />}
 
               {activeTab === 'whales' && (
                 <WhaleWatchlist

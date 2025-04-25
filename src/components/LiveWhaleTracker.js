@@ -14,7 +14,7 @@ import {
  * Live Whale Tracker Dashboard Component - Enhanced Version
  * Polls for new large transactions in real-time with improved automatic updates
  */
-const LiveWhaleTracker = () => {
+const LiveWhaleTracker = ({ currentWalletAddress }) => {
   // Core state
   const [liveTransfers, setLiveTransfers] = useState([]);
   const [isPolling, setIsPolling] = useState(true);
@@ -23,6 +23,7 @@ const LiveWhaleTracker = () => {
   const [error, setError] = useState(null);
   const [pollCount, setPollCount] = useState(0); // Track number of polls for debugging
   const [autoRefreshEnabled, setAutoRefreshEnabled] = useState(true); // Control auto-refresh
+  const [notification, setNotification] = useState(null); // For displaying notifications
 
   // Filter state
   const [tokenFilter, setTokenFilter] = useState('all'); // 'all', 'sol', 'usdc', 'usdt', 'bonk'
@@ -221,6 +222,40 @@ const LiveWhaleTracker = () => {
       setupPollingInterval();
     }
   }, [isUpdating, autoRefreshEnabled, isPolling, setupPollingInterval]);
+
+  // Effect to add the current wallet address to active wallets when it changes
+  useEffect(() => {
+    if (currentWalletAddress && currentWalletAddress.trim() !== '') {
+      // Check if the wallet is already in the active wallets list
+      const walletExists = activeWallets.some(wallet => wallet.address === currentWalletAddress);
+
+      if (!walletExists) {
+        // Get wallet info if available
+        const knownInfo = getKnownWalletInfo(currentWalletAddress);
+
+        // Create new wallet object
+        const newWallet = {
+          address: currentWalletAddress,
+          label: knownInfo ? knownInfo.name : `Wallet ${formatAddress(currentWalletAddress)}`
+        };
+
+        // Add to active wallets
+        const updatedWallets = [...activeWallets, newWallet];
+        setActiveWallets(updatedWallets);
+
+        // Save to localStorage
+        localStorage.setItem('liveTrackerWallets', JSON.stringify(updatedWallets));
+
+        // Show a notification that the wallet was added
+        setNotification(`Added ${newWallet.label} to live tracking`);
+
+        // Clear notification after 3 seconds
+        setTimeout(() => {
+          setNotification(null);
+        }, 3000);
+      }
+    }
+  }, [currentWalletAddress, activeWallets]);
 
   // Manual refresh function
   const refreshData = () => {
@@ -446,6 +481,14 @@ const LiveWhaleTracker = () => {
         </div>
       </div>
 
+      {notification && (
+        <div className="notification-message">
+          <div className="notification-content">
+            {notification}
+          </div>
+        </div>
+      )}
+
       <div className={`live-status ${autoRefreshEnabled ? 'active' : 'paused'}`}>
         <div className="live-status-indicator"></div>
         <div className="live-status-text">
@@ -485,6 +528,9 @@ const LiveWhaleTracker = () => {
                 <button
                   className="remove-wallet"
                   onClick={() => {
+                    // Get the wallet being removed
+                    const walletToRemove = activeWallets[index];
+
                     // Remove wallet from list
                     const newWallets = [...activeWallets];
                     newWallets.splice(index, 1);
@@ -497,6 +543,13 @@ const LiveWhaleTracker = () => {
                     if (currentWalletIndex >= newWallets.length) {
                       setCurrentWalletIndex(0);
                     }
+
+                    // Filter out transactions from the removed wallet
+                    setLiveTransfers(prevTransfers =>
+                      prevTransfers.filter(transfer =>
+                        transfer.walletLabel !== walletToRemove.label
+                      )
+                    );
                   }}
                   title="Remove wallet"
                 >
@@ -514,6 +567,9 @@ const LiveWhaleTracker = () => {
                 // Reset to default wallets
                 setActiveWallets(defaultWallets);
                 localStorage.setItem('liveTrackerWallets', JSON.stringify(defaultWallets));
+
+                // Clear existing transactions to start fresh with default wallets
+                setLiveTransfers([]);
               }}
               title="Reset to default wallets"
             >
@@ -525,6 +581,9 @@ const LiveWhaleTracker = () => {
                 // Clear all wallets
                 setActiveWallets([]);
                 localStorage.setItem('liveTrackerWallets', JSON.stringify([]));
+
+                // Clear all transactions
+                setLiveTransfers([]);
               }}
               title="Clear all wallets"
             >

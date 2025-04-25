@@ -26,21 +26,25 @@ SolGuardian addresses these challenges by providing:
 ## Key Features
 
 ### Whale Watchlist
+![Whale Watchlist](screenshots/whale-watchlist.png)
 - Pre-populated list of known whale wallets
 - Custom watchlist management
 - Quick access to detailed transaction history
 
 ### Wallet Profiling
+![Wallet Profile](screenshots/wallet-profile.png)
 - Behavior analysis based on transaction patterns
 - Metrics including average transfer size and frequency
 - Visual indicators of wallet activity type
 
 ### Transaction Flow Analysis
+![Transaction Flow](screenshots/transaction-flow.png)
 - Visualization of token movement
 - Categorization by destination type (exchanges, DEXs, whales)
 - Percentage breakdown of incoming/outgoing flows
 
 ### Live Whale Tracker
+![Live Whale Tracker](screenshots/live-whale-tracker.png)
 - Real-time monitoring of large transactions
 - Configurable thresholds and refresh intervals
 - Automatic pause on significant activity detection
@@ -99,7 +103,17 @@ SolGuardian directly supports the hackathon's goal of demonstrating that "Solana
 
 ## Demo & Links
 
-- **Video Walkthrough**: A comprehensive demonstration of all features (Primary submission material)
+### Video Walkthrough
+Our comprehensive video demonstration showcases all key features of SolGuardian in action:
+- [Download SolGuardian Demo Video](videos/solguardian-demo.mp4) 
+
+The video covers:
+- Setting up and navigating the Whale Watchlist
+- Analyzing wallet profiles and behavior patterns
+- Visualizing transaction flows between wallets, exchanges, and DEXs
+- Monitoring large transactions in real-time with the Live Whale Tracker
+
+### Live Application & Source Code
 - [Live Demo](https://harpal88.github.io/solguardian): Interactive application deployment
 - [GitHub Repository](https://github.com/harpal88/solguardian): Source code and documentation
 
