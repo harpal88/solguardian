@@ -18,6 +18,24 @@ SolGuardian addresses this challenge by providing real-time monitoring of whale 
 - **Live Whale Tracker**: Real-time monitoring of large transactions across the Solana network
 - **Historical Trend Analysis**: Chart-based visualization of transaction patterns over time
 
+### Screenshots
+
+#### Whale Watchlist
+![Whale Watchlist](screenshots/whale-watchlist.png)
+*Monitor known whale wallets and track their transaction activity*
+
+#### Wallet Profile
+![Wallet Profile](screenshots/wallet-profile.png)
+*Analyze wallet behavior patterns and assign profile tags based on transaction history*
+
+#### Transaction Flow Analysis
+![Transaction Flow](screenshots/transaction-flow.png)
+*Visualize token movement between wallets, exchanges, and DEXs*
+
+#### Live Whale Tracker
+![Live Whale Tracker](screenshots/live-whale-tracker.png)
+*Real-time monitoring of large transactions across the Solana network*
+
 ## Hackathon Focus Area
 
 SolGuardian directly addresses the "Whale Activity & Token Flow Monitoring" focus area of the Solscan Monitoring Masters hackathon by:
@@ -185,7 +203,13 @@ SolGuardian provides significant benefits to the Solana ecosystem:
 - Alert system for custom transaction patterns
 - Mobile application for on-the-go monitoring
 
-## Video Demonstration
+## Demo & Links
+
+### Live Demo
+
+A live demo of SolGuardian is available at: [https://harpal88.github.io/solguardian](https://harpal88.github.io/solguardian)
+
+### Video Demonstration
 
 A comprehensive video walkthrough of SolGuardian is available that demonstrates all the key features:
 
@@ -195,6 +219,15 @@ A comprehensive video walkthrough of SolGuardian is available that demonstrates 
 - Live Whale Tracker in action
 
 The video provides a clear demonstration of how to use each feature and the insights they provide.
+
+#### Watch the Demo
+
+<video width="100%" controls>
+  <source src="videos/solguardian-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+[Download Video](videos/solguardian-demo.mp4)
 
 ## Available Scripts
 
