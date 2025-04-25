@@ -222,12 +222,9 @@ The video provides a clear demonstration of how to use each feature and the insi
 
 #### Watch the Demo
 
-<video width="100%" controls>
-  <source src="videos/solguardian-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+**[▶️ Watch SolGuardian Demo Video](videos/solguardian-demo.mp4)**
 
-[Download Video](videos/solguardian-demo.mp4)
+The demo video showcases all key features of SolGuardian in action, including the Whale Watchlist, Wallet Profiling, Transaction Flow Analysis, and Live Whale Tracker.
 
 ## Available Scripts
 

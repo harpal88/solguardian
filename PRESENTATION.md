@@ -105,7 +105,8 @@ SolGuardian directly supports the hackathon's goal of demonstrating that "Solana
 
 ### Video Walkthrough
 Our comprehensive video demonstration showcases all key features of SolGuardian in action:
-- [Download SolGuardian Demo Video](videos/solguardian-demo.mp4) 
+
+**[▶️ Watch SolGuardian Demo Video](videos/solguardian-demo.mp4)**
 
 The video covers:
 - Setting up and navigating the Whale Watchlist

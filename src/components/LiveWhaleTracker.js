@@ -62,6 +62,7 @@ const LiveWhaleTracker = ({ currentWalletAddress }) => {
   // Store the polling interval ID and track last fetch time
   const pollingIntervalRef = useRef(null);
   const lastFetchTimeRef = useRef(Date.now());
+  const isInitialRender = useRef(true); // Track initial render
   const POLL_INTERVAL = 10000; // 10 seconds between polls
 
   // Fetch transfers for a specific wallet - optimized with our new API utilities
@@ -223,12 +224,20 @@ const LiveWhaleTracker = ({ currentWalletAddress }) => {
     }
   }, [isUpdating, autoRefreshEnabled, isPolling, setupPollingInterval]);
 
-  // Effect to add the current wallet address to active wallets when it changes
+  // Effect to handle adding wallets from the watchlist
   useEffect(() => {
+    // Skip the first render (when component mounts)
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+      return;
+    }
+
+    // Only proceed if we have a valid wallet address
     if (currentWalletAddress && currentWalletAddress.trim() !== '') {
       // Check if the wallet is already in the active wallets list
       const walletExists = activeWallets.some(wallet => wallet.address === currentWalletAddress);
 
+      // Only add if it's not already in the list
       if (!walletExists) {
         // Get wallet info if available
         const knownInfo = getKnownWalletInfo(currentWalletAddress);
@@ -550,6 +559,14 @@ const LiveWhaleTracker = ({ currentWalletAddress }) => {
                         transfer.walletLabel !== walletToRemove.label
                       )
                     );
+
+                    // Show notification that wallet was removed
+                    setNotification(`Removed ${walletToRemove.label} from live tracking`);
+
+                    // Clear notification after 3 seconds
+                    setTimeout(() => {
+                      setNotification(null);
+                    }, 3000);
                   }}
                   title="Remove wallet"
                 >
