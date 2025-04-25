@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/solguardian/static/css/main.2d6ad747.css",
-    "main.js": "/solguardian/static/js/main.cfecc4cf.js",
+    "main.js": "/solguardian/static/js/main.64347dbe.js",
     "static/js/453.8f31123a.chunk.js": "/solguardian/static/js/453.8f31123a.chunk.js",
     "index.html": "/solguardian/index.html",
     "main.2d6ad747.css.map": "/solguardian/static/css/main.2d6ad747.css.map",
-    "main.cfecc4cf.js.map": "/solguardian/static/js/main.cfecc4cf.js.map",
+    "main.64347dbe.js.map": "/solguardian/static/js/main.64347dbe.js.map",
     "453.8f31123a.chunk.js.map": "/solguardian/static/js/453.8f31123a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2d6ad747.css",
-    "static/js/main.cfecc4cf.js"
+    "static/js/main.64347dbe.js"
   ]
 }
