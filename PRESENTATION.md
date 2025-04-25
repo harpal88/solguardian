@@ -115,7 +115,7 @@ The video covers:
 - Monitoring large transactions in real-time with the Live Whale Tracker
 
 ### Live Application & Source Code
-- [Live Demo](https://harpal88.github.io/solguardian): Interactive application deployment
+- [Live Demo](https://x.com/harpalsinh088/status/1915681031102857545): Interactive application deployment
 - [GitHub Repository](https://github.com/harpal88/solguardian): Source code and documentation
 
 ## Team
