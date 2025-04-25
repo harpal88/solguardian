@@ -118,7 +118,7 @@ const LiveWhaleTracker = ({ currentWalletAddress }) => {
 
         // Only update if we found large transactions
         if (enhancedTransactions.length > 0) {
-          // Update transfers with proper deduplication
+          // Update transfers with proper deduplication and time filtering
           setLiveTransfers(prev => {
             // Combine with existing transfers
             const combined = [...enhancedTransactions, ...prev];
@@ -126,8 +126,24 @@ const LiveWhaleTracker = ({ currentWalletAddress }) => {
             // Use our optimized deduplication function
             const uniqueTransfers = deduplicateTransactions(combined);
 
+            // Get current time in seconds
+            const currentTime = Math.floor(Date.now() / 1000);
+
+            // Filter out transactions older than 24 hours (86400 seconds)
+            const recentTransfers = uniqueTransfers.filter(transfer => {
+              const timestamp = transfer.block_time || transfer.blockTime;
+              return (currentTime - timestamp) < 86400;
+            });
+
+            // Sort by timestamp (most recent first)
+            recentTransfers.sort((a, b) => {
+              const timestampA = a.block_time || a.blockTime;
+              const timestampB = b.block_time || b.blockTime;
+              return timestampB - timestampA;
+            });
+
             // Limit to 50 transactions to prevent memory issues
-            return uniqueTransfers.slice(0, 50);
+            return recentTransfers.slice(0, 50);
           });
         }
 
@@ -234,37 +250,49 @@ const LiveWhaleTracker = ({ currentWalletAddress }) => {
 
     // Only proceed if we have a valid wallet address
     if (currentWalletAddress && currentWalletAddress.trim() !== '') {
-      // Check if the wallet is already in the active wallets list
-      const walletExists = activeWallets.some(wallet => wallet.address === currentWalletAddress);
+      console.log("LiveWhaleTracker: Received wallet address:", currentWalletAddress);
 
-      // Only add if it's not already in the list
-      if (!walletExists) {
-        // Get wallet info if available
-        const knownInfo = getKnownWalletInfo(currentWalletAddress);
+      // Use a functional update to avoid dependency on activeWallets
+      setActiveWallets(prevWallets => {
+        // Check if the wallet is already in the active wallets list
+        const walletExists = prevWallets.some(wallet => wallet.address === currentWalletAddress);
 
-        // Create new wallet object
-        const newWallet = {
-          address: currentWalletAddress,
-          label: knownInfo ? knownInfo.name : `Wallet ${formatAddress(currentWalletAddress)}`
-        };
+        // Only add if it's not already in the list
+        if (!walletExists) {
+          // Get wallet info if available
+          const knownInfo = getKnownWalletInfo(currentWalletAddress);
 
-        // Add to active wallets
-        const updatedWallets = [...activeWallets, newWallet];
-        setActiveWallets(updatedWallets);
+          // Create new wallet object
+          const newWallet = {
+            address: currentWalletAddress,
+            label: knownInfo ? knownInfo.name : `Wallet ${formatAddress(currentWalletAddress)}`
+          };
 
-        // Save to localStorage
-        localStorage.setItem('liveTrackerWallets', JSON.stringify(updatedWallets));
+          // Create updated wallets array
+          const updatedWallets = [...prevWallets, newWallet];
 
-        // Show a notification that the wallet was added
-        setNotification(`Added ${newWallet.label} to live tracking`);
+          // Save to localStorage
+          localStorage.setItem('liveTrackerWallets', JSON.stringify(updatedWallets));
 
-        // Clear notification after 3 seconds
-        setTimeout(() => {
-          setNotification(null);
-        }, 3000);
-      }
+          // Show a notification that the wallet was added
+          setNotification(`Added ${newWallet.label} to live tracking`);
+
+          // Clear notification after 3 seconds
+          setTimeout(() => {
+            setNotification(null);
+          }, 3000);
+
+          console.log("LiveWhaleTracker: Added wallet to tracking:", newWallet);
+
+          // Return the updated wallets array
+          return updatedWallets;
+        }
+
+        // If wallet already exists, return the previous wallets unchanged
+        return prevWallets;
+      });
     }
-  }, [currentWalletAddress, activeWallets]);
+  }, [currentWalletAddress]);
 
   // Manual refresh function
   const refreshData = () => {
@@ -710,7 +738,12 @@ const LiveWhaleTracker = ({ currentWalletAddress }) => {
                   <tr key={index} className="live-transaction-row">
                     <td>
                       <div>{formatDate(timestamp)}</div>
-                      <div className="time-ago">{timeAgo(timestamp)}</div>
+                      <div className="time-ago">
+                        {timeAgo(timestamp)}
+                        {Math.floor(Date.now() / 1000) - timestamp < 3600 && (
+                          <span className="recent-indicator"> • Recent</span>
+                        )}
+                      </div>
                     </td>
                     <td>
                       <div className="address-container">

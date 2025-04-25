@@ -894,6 +894,14 @@
   font-size: 0.8em;
   color: #a0a0a0;
   margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.recent-indicator {
+  color: #14F195;
+  font-weight: 500;
+  animation: pulse 2s infinite;
 }
 
 .alert-icon {
