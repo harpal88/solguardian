@@ -227,6 +227,10 @@ The video provides a clear demonstration of how to use each feature and the insi
 
 **[▶️ Watch SolGuardian Demo Video](videos/solguardian-demo.mp4)**
 
+
+
+
+
 The demo video showcases all key features of SolGuardian in action, including the Whale Watchlist, Wallet Profiling, Transaction Flow Analysis, and Live Whale Tracker.
 
 ## Available Scripts
