@@ -207,7 +207,10 @@ SolGuardian provides significant benefits to the Solana ecosystem:
 
 ### Live Demo
 
-A live demo of SolGuardian is available at: [https://harpal88.github.io/solguardian](https://harpal88.github.io/solguardian)
+
+
+
+
 
 ### Video Demonstration
 
