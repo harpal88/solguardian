@@ -106,7 +106,7 @@ SolGuardian directly supports the hackathon's goal of demonstrating that "Solana
 ### Video Walkthrough
 Our comprehensive video demonstration showcases all key features of SolGuardian in action:
 
-**[▶️ Watch SolGuardian Demo Video](videos/solguardian-demo.mp4)**
+Check out the SolGuardian demo on Twitter: [https://x.com/harpalsinh088/status/1915681031102857545](https://x.com/harpalsinh088/status/1915681031102857545)
 
 The video covers:
 - Setting up and navigating the Whale Watchlist
@@ -120,8 +120,8 @@ The video covers:
 
 ## Team
 
-- Developer: Harpal Singh
-- Contact: harpalsingh7984@gmail.com
+- Developer: Harpal Sinh
+- Contact: harpalsinh7984@gmail.com
 
 ## Acknowledgments
 

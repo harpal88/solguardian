@@ -214,17 +214,15 @@ SolGuardian provides significant benefits to the Solana ecosystem:
 
 ### Video Demonstration
 
-A comprehensive video walkthrough of SolGuardian is available that demonstrates all the key features:
+A comprehensive video walkthrough of SolGuardian is available on Twitter that demonstrates all the key features:
 
 - Whale Watchlist functionality
 - Wallet Profile analysis
 - Transaction Flow visualization
 - Live Whale Tracker in action
 
-The video provides a clear demonstration of how to use each feature and the insights they provide.
-
 #### Watch the Demo
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚀 Excited to launch SolGuardian - a real-time Solana whale activity monitor! 🐋<br><br>Track large transactions, visualize token flows, and profile wallet behaviors with our intuitive dashboard. Built with <a href="https://twitter.com/solscanofficial?ref_src=twsrc%5Etfw">@solscanofficial</a> APIs for the <a href="https://twitter.com/hashtag/SolscanMonitoringMasters?src=hash&amp;ref_src=twsrc%5Etfw">#SolscanMonitoringMasters</a> hackathon.<a href="https://twitter.com/heliuslabs?ref_src=twsrc%5Etfw">@heliuslabs</a> <a href="https://t.co/RuRNAcznHK">pic.twitter.com/RuRNAcznHK</a></p>&mdash; harpalsinh (@harpalsinh088) <a href="https://twitter.com/harpalsinh088/status/1915681031102857545?ref_src=twsrc%5Etfw">April 25, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+Check out the SolGuardian demo on Twitter: [https://x.com/harpalsinh088/status/1915681031102857545](https://x.com/harpalsinh088/status/1915681031102857545)
 
 ## Available Scripts
 
